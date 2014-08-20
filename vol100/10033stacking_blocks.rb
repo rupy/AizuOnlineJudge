@@ -8,12 +8,14 @@ def stacking_blocks
   end
 
   loop do
-    (command, p, color) = gets.chomp.split
+    (command, p1, p2) = gets.chomp.split
     case command
       when "push"
-        stack[p.to_i-1].push(color)
+        stack[p1.to_i - 1].push(p2)
       when "pop"
-        puts stack[p.to_i-1].pop
+        puts stack[p1.to_i - 1].pop
+      when "move"
+        stack[p2.to_i - 1].push stack[p1.to_i - 1].pop
       when "quit"
         break
     end
