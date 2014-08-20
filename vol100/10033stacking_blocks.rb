@@ -1,14 +1,19 @@
 def stacking_blocks
 
+  m = gets.to_i
+
   stack = Array.new
+  m.times do
+    stack.push Array.new
+  end
 
   loop do
-    (command, color) = gets.chomp.split
+    (command, p, color) = gets.chomp.split
     case command
       when "push"
-        stack.push(color)
+        stack[p.to_i-1].push(color)
       when "pop"
-        puts stack.pop
+        puts stack[p.to_i-1].pop
       when "quit"
         break
     end
