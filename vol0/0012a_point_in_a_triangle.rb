@@ -39,6 +39,8 @@ def a_point_in_a_triangle
     outer.push outer_product vec1, vec2
   end
   puts (outer.all?{|o|o > 0} || outer.all?{|o|o < 0}) ? 'YES' : 'NO'
+
+  # TODO: 複数行の入力を処理できるようにする
 end
 
 a_point_in_a_triangle
